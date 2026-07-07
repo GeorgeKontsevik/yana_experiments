@@ -12,6 +12,7 @@ __pycache__/
 .ipynb_checkpoints/
 .coverage
 htmlcov/
+.env
 .venv/
 .venv-*/
 venv/
@@ -20,4 +21,3 @@ venv/
 *.temp
 *~
 # --- /dissertation cookie-cutter ---
-

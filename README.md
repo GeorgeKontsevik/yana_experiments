@@ -1,5 +1,7 @@
 # yana_experiments
 
+[![OSA-improved](https://img.shields.io/badge/improved%20by-OSA-yellow)](https://github.com/aimclub/OSA)
+
 Saved route-generation and street-pattern evaluation artifacts. This repo is the experiment ledger: generated routes, OD matrices, summaries, and preview PNGs. The runnable generation code lives upstream in the parent pipeline / ConnectPT stack, not here.
 
 ## System Map
@@ -39,3 +41,4 @@ No standalone publication tracked; experiment repo for dissertation route-genera
 ## Next Steps / Heuristics
 
 Heuristic: live previews are the first sanity check. If route geometry looks wrong, inspect the upstream generator inputs in the parent/ConnectPT workflow before interpreting metrics.
+

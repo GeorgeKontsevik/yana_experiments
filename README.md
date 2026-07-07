@@ -1,19 +1,20 @@
 # yana_experiments
 
-Local Yana route-generation experiment workspace.
+Route-generation and street-pattern evaluation experiments, including live previews for real-morphology training runs.
 
-## Scheme
+## System Map
 
 ```mermaid
 flowchart LR
-    A[Inputs] --> B[Run: street_pattern_route_comparison/]
-    B --> C[Checked outputs]
-    C --> D[Paper / thesis use]
+    CITY[city graph] --> TRAIN[real_morph_training_eval]
+    TRAIN --> ROUTES[existing vs generated routes]
+    ROUTES --> PATTERN[street-pattern comparison]
+    PATTERN --> PREVIEW[live preview PNGs]
 ```
 
 ## Main Result
 
-![Main result](docs/readme_result.svg)
+![Existing vs generated routes](real_morph_training_eval/bergen_norway/live_preview/latest_05_existing_vs_generated_vs_street_pattern_routes.png)
 
 ## Run
 
@@ -22,17 +23,15 @@ Entrypoint: `street_pattern_route_comparison/`
 Human:
 
 ```bash
-Open the relevant experiment folder and run its local README/script when promoted.
+uv run python -m street_pattern_route_comparison --help
 ```
 
-Agent:
-
-Do not invent fallback route generation to make diversity look better.
+Agent: compare generated routes against existing routes and street-pattern labels; preserve duplicate/failed route cases as evidence instead of forcing diversity.
 
 ## Publication
 
-No standalone publication tracked.
+No standalone publication tracked; experiment repo for dissertation route-generation work.
 
 ## Next Steps / Heuristics
 
-Heuristic: store duplicate/weak route outputs honestly; promote stable scripts into a named subproject.
+Heuristic: the live preview is the first sanity check. If route geometry looks wrong, inspect graph/stops before interpreting metrics.
